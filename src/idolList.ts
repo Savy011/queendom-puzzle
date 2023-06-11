@@ -2,104 +2,134 @@ import { Idol } from './type';
 
 const idolList: Array<Idol> = [
   {
-    name: 'Bo Ra',
+    nameEng: 'Bo Ra',
+    nameKor: '보라',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/bora.png'
   },
   {
-    name: 'Chae Rin',
+    nameEng: 'Chae Rin',
+    nameKor: '채린',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/chaerin.png'
   },
   {
-    name: 'Elly',
+    nameEng: 'Elly',
+    nameKor: '엘리',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/elly.png'
   },
   {
-    name: 'Fye',
+    nameEng: 'Fye',
+    nameKor: '파이',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/fye.png'
   },
   {
-    name: 'Hwiseo',
+    nameEng: 'Hwiseo',
+    nameKor: '휘서',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/hwiseo.png'
   },
   {
-    name: 'Im Do Hwa',
+    nameEng: 'Im Do Hwa',
+    nameKor: '임도화',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/dohwa.png'
   },
   {
-    name: 'Ji Won',
+    nameEng: 'Ji Won',
+    nameKor: '지원',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jiwon.png'
   },
   {
-    name: 'Jihan',
+    nameEng: 'Jihan',
+    nameKor: '지한',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jihan.png'
   },
   {
-    name: 'JooE',
+    nameEng: 'JooE',
+    nameKor: '주이',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jooe.png'
   },
   {
-    name: 'Juri',
+    nameEng: 'Juri',
+    nameKor: '쥬리)',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/juri.png'
   },
   {
-    name: 'Kei',
+    nameEng: 'Kei',
+    nameKor: '케이',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/kei.png'
   },
   {
-    name: 'Lee Jiwoo',
+    nameEng: 'Lee Jiwoo',
+    nameKor: '이지우',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jiwoo.png'
   },
   {
-    name: 'Lee Soojin',
+    nameEng: 'Lee Soojin',
+    nameKor: '이수진',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/soojin.png'
   },
   {
-    name: 'Nana',
+    nameEng: 'Nana',
+    nameKor: '나나',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/nana.png'
   },
   {
-    name: 'Park Soeun',
+    nameEng: 'Park Soeun',
+    nameKor: '박소은',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/soeun.png'
   },
   {
-    name: 'Riina',
+    nameEng: 'Riina',
+    nameKor: '리이나',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/riina.png'
   },
   {
-    name: 'Sangah',
+    nameEng: 'Sangah',
+    nameKor: '상아',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/sangah.png'
   },
   {
-    name: 'Miru',
+    nameEng: 'Miru',
+    nameKor: '미루',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/miru.png'
   },
   {
-    name: 'Suyun',
+    nameEng: 'Suyun',
+    nameKor: '수윤',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/suyun.png'
   },
   {
-    name: 'Wooyeon',
+    nameEng: 'Wooyeon',
+    nameKor: '우연',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/wooyeon.png'
   },
   {
-    name: 'Yeeun',
+    nameEng: 'Yeeun',
+    nameKor: '예은',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeeun.png'
   },
   {
-    name: 'Yeonhee',
+    nameEng: 'Yeonhee',
+    nameKor: '연희',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeonhee.png'
   },
   {
-    name: 'Yeoreum',
+    nameEng: 'Yeoreum',
+    nameKor: '여름',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeoreum.png'
   },
   {
-    name: 'Yoon Seoyeon',
+    nameEng: 'Yoon Seoyeon',
+    nameKor: '윤서연',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/seoyeon.png'
   },
   {
-    name: 'Yuki',
+    nameEng: 'Yuki',
+    nameKor: '유키',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yuki.png'
+  },
+  {
+    nameEng: 'Zoa',
+    nameKor: '조아',
+    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/zoa.png'
   }
 ];
 

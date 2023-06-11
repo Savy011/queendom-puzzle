@@ -4,7 +4,8 @@ export enum Lang {
 }
 
 export type Idol = {
-  name: string;
+  nameEng: string;
+  nameKor: string;
   url: string;
 };
 
