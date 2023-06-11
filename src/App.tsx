@@ -1,38 +1,49 @@
 import { useState } from 'react';
-import idolList from './idolList';
-import { Idol } from './type';
+import { Idol, Lang } from './type';
+import IdolSelector from './components/IdolSelector';
+import Canvas from './components/Canvas';
 
 const App = () => {
-	const [selectedIdol, setSelectedIdol] = useState<Idol | null>(null)
+  const [selectedIdol, setSelectedIdol] = useState<Idol | null>(null);
+  const [language, setLanguage] = useState<Lang>(Lang.eng);
 
-	const onIdolChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		event.preventDefault();
-		if (typeof event.target.value === "string") {
-			const value = event.target.value;
-			const foundIdol = idolList.find(idol => idol.name === value)
-			if (foundIdol) {
-				setSelectedIdol(foundIdol);
-			}
-		}
-	};
-
-	return (
-		<div>
-			<header>
-				<p>Queendom Puzzle</p>
-			</header>
-			<select defaultValue='null' onChange={onIdolChange}>
-				<option disabled value='null'>Select Idol...</option>
-				{idolList.map(idol => (
-					<option key={idol.name} value={idol.name}>{idol.name}</option>
-				))}
-			</select>
-			<div>
-				Selected Idol: {selectedIdol?.name}
-				<img src={selectedIdol?.url} alt={selectedIdol?.url} />
-			</div>
-		</div>
-	);
-}
+  return (
+    <div>
+      <div className="navbar">
+        <div className="flex-1 font-abenda text-2xl font-bold">
+          <p>Queendom Puzzle</p>
+        </div>
+        <div className="join flex-none">
+          <button
+            className="btn btn-square join-item tooltip tooltip-bottom"
+            data-tip="English"
+            onClick={(e) => setLanguage(Lang.eng)}
+          >
+            ENG
+          </button>
+          <button
+            className="btn btn-square join-item tooltip tooltip-bottom"
+            data-tip="Korean"
+            onClick={(e) => setLanguage(Lang.kor)}
+          >
+            KOR
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-row w-full p-5">
+        <div className="card px-4 shadow-xl">
+          <IdolSelector
+            selectedIdol={selectedIdol}
+            setSelectedIdol={setSelectedIdol}
+            selectNumber={4}
+          />
+        </div>
+        <div className="p-3 flex justify-end">
+          <Canvas selectedIdol={selectedIdol} language={language} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default App;

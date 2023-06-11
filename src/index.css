@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Abenda';
+	src: url('../.github/fonts/Abenda.ttf');
+}
