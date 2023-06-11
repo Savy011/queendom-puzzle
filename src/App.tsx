@@ -38,6 +38,7 @@ const App = () => {
             ENG
           </button>
           <button
+
             className="btn btn-accent px-4 join-item tooltip tooltip-bottom tooltip-accent"
             data-tip="Korean"
             onClick={(e) => setLanguage(Lang.kor)}

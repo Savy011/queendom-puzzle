@@ -86,6 +86,7 @@ const Canvas = ({
   const [fifthIdolImage] = useImage(fifthUrl);
   const [sixthIdolImage] = useImage(sixthUrl);
   const [seventhIdolImage] = useImage(seventhUrl);
+
   const [bgImage] = useImage(language);
 
   const stageDetails = {
@@ -109,6 +110,7 @@ const Canvas = ({
       y: 79
     }
   };
+
 
   const secondImageDetails = {
     originalDimensions: {
