@@ -20,7 +20,7 @@ const App = () => {
   const [language, setLanguage] = useState<Lang>(Lang.eng);
 
   return (
-    <div className="bg-tertiary h-full">
+    <div className="h-full">
       <div className="navbar bg-secondary">
         <div className="flex-1 text-3xl font-bold text-primary">
           {language === Lang.eng ? (
@@ -38,7 +38,6 @@ const App = () => {
             ENG
           </button>
           <button
-
             className="btn btn-accent px-4 join-item tooltip tooltip-bottom tooltip-accent"
             data-tip="Korean"
             onClick={(e) => setLanguage(Lang.kor)}
@@ -75,7 +74,7 @@ const App = () => {
             setSeventhSelectedIdol={setSeventhSelectedIdol}
           />
         </div>
-        <div className="flex justify-end p-6 mx-4 border-textPrimary bg-secondary border-8 rounded-3xl">
+        <div className="flex justify-items-end p-6 mx-4 border-textPrimary bg-secondary border-8 rounded-3xl">
           <Canvas
             name={name}
             firstSelectedIdol={firstSelectedIdol}
