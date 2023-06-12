@@ -10,7 +10,6 @@ interface Props {
 
 const IdolSelector = ({
   language,
-  selectedIdol,
   setSelectedIdol,
   selectNumber,
   idolList
@@ -51,7 +50,6 @@ const IdolSelector = ({
         {idolList.map((idol) => (
           <option key={idol.nameEng} value={idol.nameEng}>
             {language === Lang.eng ? idol.nameEng : idol.nameKor}
-
           </option>
         ))}
       </select>

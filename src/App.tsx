@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Idol, Lang } from './type';
-import Canvas from './components/Canvas';
-import IdolsSelection from './components/IdolsSelection';
 import idolList from './idolList';
+import Navbar from './components/Navbar';
+import InputCard from './components/InputCard';
+import Preview from './components/Preview';
+import NameInputCard from './components/NameInputCard';
+import ScrollToTop from 'react-scroll-to-top';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpLong } from '@fortawesome/free-solid-svg-icons';
+import { theme } from './theme';
+import Konva from 'konva';
 
 const App = () => {
+  const [name, setName] = useState('');
   const [firstSelectedIdol, setFirstSelectedIdol] = useState<Idol | null>(null);
   const [secondSelectedIdol, setSecondSelectedIdol] = useState<Idol | null>(
     null
@@ -13,70 +21,45 @@ const App = () => {
   const [forthSelectedIdol, setForthSelectedIdol] = useState<Idol | null>(null);
   const [fifthSelectedIdol, setFifthSelectedIdol] = useState<Idol | null>(null);
   const [sixthSelectedIdol, setSixthSelectedIdol] = useState<Idol | null>(null);
-  const [name, setName] = useState('');
   const [seventhSelectedIdol, setSeventhSelectedIdol] = useState<Idol | null>(
     null
   );
   const [language, setLanguage] = useState<Lang>(Lang.eng);
 
+  const stageRef = useRef<Konva.Stage>(null);
+
   return (
-    <div className="h-full">
-      <div className="navbar bg-secondary">
-        <div className="flex-1 text-3xl font-bold text-primary">
-          {language === Lang.eng ? (
-            <p className="font-abenda align-middle">Queendom Puzzle</p>
-          ) : (
-            <p className="font-han">퀸덤 퍼즐</p>
-          )}
-        </div>
-        <div className="join flex-none">
-          <button
-            className="btn btn-accent px-4 join-item tooltip tooltip-bottom tooltip-accent"
-            data-tip="English"
-            onClick={(e) => setLanguage(Lang.eng)}
-          >
-            ENG
-          </button>
-          <button
-            className="btn btn-accent px-4 join-item tooltip tooltip-bottom tooltip-accent"
-            data-tip="Korean"
-            onClick={(e) => setLanguage(Lang.kor)}
-          >
-            KOR
-          </button>
-        </div>
-      </div>
-      <div className="flex flex-row w-full p-5">
-        <div className="card bg-secondary p-4 shadow-md shadow-primary w-1/5">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter Your Name Here"
-            className="input input-bordered input-primary"
-          />
-          <IdolsSelection
+    <div className="h-full w-full">
+      <Navbar language={language} setLanguage={setLanguage} />
+      {name === '' ? (
+        <NameInputCard name={name} setName={setName} />
+      ) : (
+        <div className="grid grid-flow-row sm:grid-flow-col w-full p-5 justify-around sm:justify-evenly">
+          <InputCard
             language={language}
             idolList={idolList}
+            name={name}
+            setName={setName}
+            stageRef={stageRef}
             firstSelectedIdol={firstSelectedIdol}
-            setFirstSelectedIdol={setFirstSelectedIdol}
             secondSelectedIdol={secondSelectedIdol}
-            setSecondSelectedIdol={setSecondSelectedIdol}
             thirdSelectedIdol={thirdSelectedIdol}
-            setThirdSelectedIdol={setThirdSelectedIdol}
             forthSelectedIdol={forthSelectedIdol}
-            setForthSelectedIdol={setForthSelectedIdol}
             fifthSelectedIdol={fifthSelectedIdol}
-            setFifthSelectedIdol={setFifthSelectedIdol}
             sixthSelectedIdol={sixthSelectedIdol}
-            setSixthSelectedIdol={setSixthSelectedIdol}
             seventhSelectedIdol={seventhSelectedIdol}
+            setFirstSelectedIdol={setFirstSelectedIdol}
+            setSecondSelectedIdol={setSecondSelectedIdol}
+            setThirdSelectedIdol={setThirdSelectedIdol}
+            setForthSelectedIdol={setForthSelectedIdol}
+            setFifthSelectedIdol={setFifthSelectedIdol}
+            setSixthSelectedIdol={setSixthSelectedIdol}
             setSeventhSelectedIdol={setSeventhSelectedIdol}
           />
-        </div>
-        <div className="flex justify-items-end p-6 mx-4 border-textPrimary bg-secondary border-8 rounded-3xl">
-          <Canvas
+          <Preview
+            stageRef={stageRef}
             name={name}
+            language={language}
             firstSelectedIdol={firstSelectedIdol}
             secondSelectedIdol={secondSelectedIdol}
             thirdSelectedIdol={thirdSelectedIdol}
@@ -84,10 +67,20 @@ const App = () => {
             fifthSelectedIdol={fifthSelectedIdol}
             sixthSelectedIdol={sixthSelectedIdol}
             seventhSelectedIdol={seventhSelectedIdol}
-            language={language}
           />
         </div>
-      </div>
+      )}
+      <ScrollToTop
+        smooth
+        component={
+          <button className="btn btn-square bg-primary">
+            <FontAwesomeIcon
+              icon={faArrowUpLong}
+              style={{ color: theme.Secondary }}
+            />
+          </button>
+        }
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { Stage, Layer, Image, Text } from 'react-konva';
 import { Idol, Lang } from '../type';
 import useImage from 'use-image';
 import { theme } from '../theme';
+import Konva from 'konva';
 
 interface Props {
   name: string;
@@ -13,10 +14,11 @@ interface Props {
   sixthSelectedIdol: Idol | null;
   seventhSelectedIdol: Idol | null;
   language: Lang;
+  stageRef: React.RefObject<Konva.Stage>;
 }
 
 const placeholderUrl =
-  'https://github.com/Savy011/queendom-puzzle/blob/main/.github/images/members_images/placeholder.png';
+  'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/placeholder.png';
 
 const Canvas = ({
   name,
@@ -27,6 +29,7 @@ const Canvas = ({
   fifthSelectedIdol,
   sixthSelectedIdol,
   seventhSelectedIdol,
+  stageRef,
   language
 }: Props) => {
   let firstUrl;
@@ -79,14 +82,14 @@ const Canvas = ({
     seventhUrl = seventhSelectedIdol.url;
   }
 
-  const [firstIdolImage] = useImage(firstUrl);
-  const [secondIdolImage] = useImage(secondUrl);
-  const [thirdIdolImage] = useImage(thirdUrl);
-  const [forthIdolImage] = useImage(forthUrl);
-  const [fifthIdolImage] = useImage(fifthUrl);
-  const [sixthIdolImage] = useImage(sixthUrl);
-  const [seventhIdolImage] = useImage(seventhUrl);
-
+  const [firstIdolImage] = useImage(firstUrl, 'anonymous', 'no-referrer');
+  const [secondIdolImage] = useImage(secondUrl, 'anonymous');
+  const [thirdIdolImage] = useImage(thirdUrl, 'anonymous');
+  const [forthIdolImage] = useImage(forthUrl, 'anonymous');
+  const [fifthIdolImage] = useImage(fifthUrl, 'anonymous');
+  const [sixthIdolImage] = useImage(sixthUrl, 'anonymous');
+  const [seventhIdolImage] = useImage(seventhUrl, 'anonymous');
+  console.log(firstIdolImage);
   const [bgImage] = useImage(language);
 
   const stageDetails = {
@@ -110,7 +113,6 @@ const Canvas = ({
       y: 79
     }
   };
-
 
   const secondImageDetails = {
     originalDimensions: {
@@ -223,6 +225,7 @@ const Canvas = ({
 
   return (
     <Stage
+      ref={stageRef}
       width={stageDetails.width}
       height={stageDetails.height}
       style={{ position: 'relative' }}

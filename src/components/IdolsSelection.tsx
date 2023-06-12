@@ -80,6 +80,7 @@ const IdolsSelection = (props: Props) => {
           selectNumber={7}
           idolList={props.idolList}
         />
+        <div className="p-1" />
       </div>
     </div>
   );
