@@ -88,9 +88,11 @@ const AlertModal = ({
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-quaternary">
-                        To continue, select 'Load' to load your previous group.
+                        {language === Lang.eng
+                          ? `To continue, select 'Load' to load your previous group.
                         Alternatively, choose 'Cancel' to delete your previous
-                        group and start fresh.
+                        group and start fresh.`
+                          : `계속하려면 '로드'를 선택하여 이전 항목을 불러오세요. '취소'를 선택하면 그룹을 삭제하고 새로 시작합니다.`}
                       </p>
                     </div>
                     <div className="flex flex-row w-full">
@@ -99,7 +101,7 @@ const AlertModal = ({
                           className="btn btn-primary btn-block"
                           onClick={handleLoadClick}
                         >
-                          Load
+                          {language === Lang.eng ? 'Load' : '로드'}
                         </button>
                       </div>
                       <div className="mt-4 flex pr-0 pl-3 w-full">
@@ -107,7 +109,7 @@ const AlertModal = ({
                           className="btn btn-error btn-block"
                           onClick={handleCancelClick}
                         >
-                          Cancel
+                          {language === Lang.eng ? 'Cancel' : '취소'}
                         </button>
                       </div>
                     </div>

@@ -1,5 +1,7 @@
 import Konva from 'konva';
 import { Lang } from '../type';
+import { canvasHeight, canvasWidth } from './Canvas';
+import useWindowDimensions from '../services/hooks';
 
 const DownloadButton = ({
   language,
@@ -10,6 +12,8 @@ const DownloadButton = ({
   stageRef: React.RefObject<Konva.Stage>;
   saveData: () => void;
 }) => {
+  const windowDimensions = useWindowDimensions();
+
   const downloadURI = (uri: string, name: string) => {
     const link = document.createElement('a');
     link.download = name;
@@ -20,15 +24,34 @@ const DownloadButton = ({
   };
 
   const handleDownload = () => {
-    const dataURL = stageRef.current?.toDataURL({
-      mimeType: 'image/jpeg',
-      pixelRatio: 3
+    const dataURLPC = stageRef.current?.toDataURL({
+      mimeType: 'image/png',
+      width: canvasWidth,
+      height: canvasHeight,
+      pixelRatio: 2
     });
-    if (dataURL === undefined || dataURL === '') {
+
+    const dataURLMobile = stageRef.current?.toDataURL({
+      mimeType: 'image/png',
+      width: canvasWidth,
+      height: canvasHeight,
+      pixelRatio: 4
+    });
+
+    if (
+      dataURLPC === undefined ||
+      dataURLPC === '' ||
+      dataURLMobile === undefined ||
+      dataURLMobile === ''
+    ) {
       return window.alert('Some Error Occured');
     }
-    console.log(dataURL);
-    downloadURI(dataURL, 'QueendomPuzzle.png');
+
+    if (windowDimensions.width >= 767) {
+      downloadURI(dataURLPC, 'QueendomPuzzle.png');
+    } else {
+      downloadURI(dataURLMobile, 'QueendomPuzzle.png');
+    }
     saveData();
   };
 
