@@ -9,9 +9,9 @@ const Navbar = ({ language, setLanguage }: Props) => {
   return (
     <>
       <div className="navbar bg-secondary">
-        <div className="flex-1 text-4xl font-bold">
+        <div className="flex-1 font-bold md:pl-3 md:py-3 pl-1 py-1">
           {language === Lang.eng ? (
-            <button className="align-middle w-fit text-3xl text-primary font-abenda">
+            <button className="w-fit text-xl md:text-4xl text-primary font-abenda">
               Queendom Puzzle
             </button>
           ) : (
@@ -20,7 +20,7 @@ const Navbar = ({ language, setLanguage }: Props) => {
             </button>
           )}
         </div>
-        <div className="join flex-none">
+        <div className="join flex-none pr-1 md:pr-3 md:py-3 align-middle">
           <button
             className="btn btn-accent px-4 join-item text-secondary font-bold tooltip tooltip-bottom tooltip-accent"
             data-tip="English"
@@ -33,7 +33,7 @@ const Navbar = ({ language, setLanguage }: Props) => {
             data-tip="Korean"
             onClick={(e) => setLanguage(Lang.kor)}
           >
-            KOR
+            한글
           </button>
         </div>
       </div>

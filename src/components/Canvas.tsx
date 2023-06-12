@@ -98,6 +98,23 @@ const Canvas = ({
     y: 0
   };
 
+  let scale: number = 1;
+
+  function canvasResizer() {
+    const container = document.querySelector('.canvas-parent');
+
+    if (container) {
+      const computedStyle = getComputedStyle(container);
+      let containerWidth = container.clientWidth;
+
+      containerWidth -=
+        parseFloat(computedStyle.paddingLeft) +
+        parseFloat(computedStyle.paddingRight);
+
+      scale = containerWidth / stageDetails.width;
+    }
+  }
+
   const firstImageDetails = {
     originalDimensions: {
       width: 0,
@@ -222,12 +239,16 @@ const Canvas = ({
     }
   };
 
+  canvasResizer();
+
+  window.addEventListener('resize', canvasResizer);
+
   return (
     <Stage
       ref={stageRef}
-      width={stageDetails.width}
-      height={stageDetails.height}
-      style={{ position: 'relative' }}
+      width={stageDetails.width * scale}
+      height={stageDetails.height * scale}
+      scale={{ x: scale, y: scale }}
     >
       <Layer>
         <Image

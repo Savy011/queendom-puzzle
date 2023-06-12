@@ -23,12 +23,13 @@ interface Props {
   setSixthSelectedIdol: React.Dispatch<React.SetStateAction<Idol | null>>;
   setSeventhSelectedIdol: React.Dispatch<React.SetStateAction<Idol | null>>;
   stageRef: React.RefObject<Konva.Stage>;
+  saveData: () => void;
 }
 
 const InputCard = (props: Props) => {
   return (
     <>
-      <div className="card bg-secondary p-2 sm:p-4 w-full sm:w-[512px] align-middle shadow-md shadow-primary">
+      <div className="card bg-secondary sm:mx-3 p-2 md:p-4 w-full min-w-fit max-w[512px] h-fit md:min-w-[512px] md:max-w-[512px] align-middle shadow-md shadow-primary">
         <IdolsSelection
           language={props.language}
           idolList={props.idolList}
@@ -47,7 +48,11 @@ const InputCard = (props: Props) => {
           setSixthSelectedIdol={props.setSixthSelectedIdol}
           setSeventhSelectedIdol={props.setSeventhSelectedIdol}
         />
-        <DownloadButton stageRef={props.stageRef} />
+        <DownloadButton
+          language={props.language}
+          stageRef={props.stageRef}
+          saveData={props.saveData}
+        />
       </div>
     </>
   );

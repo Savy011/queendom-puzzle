@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         textPrimary: '#F29BAB',
         secondary: '#0C0B26',
-        tertiary: '#181A40'
+        tertiary: '#181A40',
+        quaternary: '#C4D0F2'
       }
     }
   },
@@ -21,7 +22,7 @@ module.exports = {
           accent: '#F29BAB',
           primary: '#F29BAB',
           secondary: '#0C0B26',
-          tertiary: '#181A40',
+          error: '#181A40',
           quaternary: '#C4D0F2',
           light: '#F2F2F2'
         }

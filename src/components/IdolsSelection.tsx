@@ -24,7 +24,7 @@ const IdolsSelection = (props: Props) => {
   return (
     <div>
       <div className="p-1" />
-      <div className="flex flex-col">
+      <div className="flex flex-col  md:min-w-fit md:max-w-full">
         <IdolSelector
           language={props.language}
           selectedIdol={props.firstSelectedIdol}

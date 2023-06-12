@@ -1,9 +1,14 @@
 import Konva from 'konva';
+import { Lang } from '../type';
 
 const DownloadButton = ({
-  stageRef
+  language,
+  stageRef,
+  saveData
 }: {
+  language: Lang;
   stageRef: React.RefObject<Konva.Stage>;
+  saveData: () => void;
 }) => {
   const downloadURI = (uri: string, name: string) => {
     const link = document.createElement('a');
@@ -24,6 +29,7 @@ const DownloadButton = ({
     }
     console.log(dataURL);
     downloadURI(dataURL, 'QueendomPuzzle.png');
+    saveData();
   };
 
   return (
@@ -31,7 +37,7 @@ const DownloadButton = ({
       className="btn btn-accent w-full text-secondary"
       onClick={handleDownload}
     >
-      Download Image
+      {language === Lang.eng ? 'Download Image' : '그룹을 다운로드하세요'}
     </button>
   );
 };

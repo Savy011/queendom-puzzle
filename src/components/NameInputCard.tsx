@@ -1,11 +1,13 @@
 import { useRef } from 'react';
+import { Lang } from '../type';
 
 interface Props {
   name: string;
+  language: Lang;
   setName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const NameInputCard = ({ name, setName }: Props) => {
+const NameInputCard = ({ name, setName, language }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleNameSubmit = (
@@ -22,23 +24,31 @@ const NameInputCard = ({ name, setName }: Props) => {
 
   return (
     <>
-      <div className="flex card p-6 m-6 max-w-md justify-center bg-secondary shadow-md shadow-primary">
-        <input
-          type="text"
-          ref={inputRef}
-          defaultValue={name}
-          placeholder="Enter Your Name Here"
-          className="input input-bordered input-primary w-full"
-        />
-        <label className="label">
-          <span className="label-text-alt">Maximum of 7 characters 🥲</span>
-        </label>
-        <button
-          className="btn btn-primary text-secondary mt-2"
-          onClick={handleNameSubmit}
-        >
-          Submit Name
-        </button>
+      <div className="flex max-w-full h-full justify-center">
+        <div className="card p-6 m-6 w-full min-w-fit max-w-md bg-secondary shadow-md shadow-primary">
+          <input
+            type="text"
+            ref={inputRef}
+            defaultValue={name}
+            placeholder={
+              language === Lang.eng
+                ? 'Enter Your Name Here'
+                : '이름을 이곳에 입력하세요'
+            }
+            className="input input-bordered input-primary max-w-md"
+          />
+          <label className="label">
+            <span className="label-text-alt text-quaternary">
+              {language === Lang.eng ? 'Upto 7 Characters' : '최대 7자'}
+            </span>
+          </label>
+          <button
+            className="btn btn-primary text-secondary mt-2"
+            onClick={handleNameSubmit}
+          >
+            {language === Lang.eng ? 'Submit Name' : '이름 제출'}
+          </button>
+        </div>
       </div>
     </>
   );
