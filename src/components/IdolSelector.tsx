@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Idol, Lang } from '../type';
 
 interface Props {
@@ -10,10 +11,23 @@ interface Props {
 
 const IdolSelector = ({
   language,
+  selectedIdol,
   setSelectedIdol,
   selectNumber,
   idolList
 }: Props) => {
+  useEffect(() => {
+    if (selectedIdol !== null) {
+      const selectInput = document.getElementById(
+        `select-input-${selectNumber}`
+      ) as HTMLSelectElement;
+      if (selectInput) {
+        selectInput.value = selectedIdol.nameEng;
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const onIdolChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
     if (typeof event.target.value === 'string') {
@@ -40,12 +54,15 @@ const IdolSelector = ({
   return (
     <>
       <select
-        className="select select-bordered w-full select-primary bg-secondary"
+        id={`select-input-${selectNumber}`}
+        className="select select-bordered w-full select-primary bg-secondary text-quaternary"
         defaultValue="null"
         onChange={onIdolChange}
       >
         <option disabled value="null">
-          Select {selectNo(selectNumber)} Idol...
+          {language === Lang.eng
+            ? `Select ${selectNo(selectNumber)} Idol...`
+            : `${selectNumber}번째 아이돌을 골라주세요`}
         </option>
         {idolList.map((idol) => (
           <option key={idol.nameEng} value={idol.nameEng}>

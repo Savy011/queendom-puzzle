@@ -17,7 +17,7 @@ interface Props {
 
 const Preview = (props: Props) => {
   return (
-    <div className="flex max-w-xl mt-12 sm:mt-0 sm:w-max p-6 border-textPrimary bg-secondary border-8 rounded-3xl">
+    <div className="canvas-parent flex mt-12 sm:m-3 sm:mb-6 p-6 min-w-full aspect-square max-w-screen border-textPrimary bg-secondary border-8 rounded-3xl">
       <Canvas
         name={props.name}
         stageRef={props.stageRef}

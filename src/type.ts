@@ -14,3 +14,15 @@ export type Background = {
   eng: string;
   kor: string;
 };
+
+export type ParsedData = {
+  name: string;
+  language: Lang;
+  first: Idol;
+  second: Idol;
+  third: Idol;
+  forth: Idol;
+  fifth: Idol;
+  sixth: Idol;
+  seventh: Idol;
+};
