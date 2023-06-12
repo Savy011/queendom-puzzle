@@ -1,13 +1,14 @@
 import { useEffect, useState, useRef } from 'react';
+import Konva from 'konva';
 import { Idol, Lang, ParsedData } from './type';
 import idolList from './idolList';
 import Navbar from './components/Navbar';
 import InputCard from './components/InputCard';
 import Preview from './components/Preview';
 import NameInputCard from './components/NameInputCard';
-import Konva from 'konva';
 import AlertModal from './components/Alert';
 import ScrollButton from './components/ScrollButton';
+import Footer from './components/Footer';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -65,7 +66,7 @@ const App = () => {
       {name === '' ? (
         <NameInputCard language={language} name={name} setName={setName} />
       ) : (
-        <div className="grid grid-flow-row mt-6 md:grid-flow-col w-full px-5 justify-around sm:justify-evenly">
+        <div className="grid grid-flow-row mt-6 mb-8 md:grid-flow-col w-screen px-5 justify-around sm:justify-evenly">
           <InputCard
             language={language}
             idolList={idolList}
@@ -117,6 +118,7 @@ const App = () => {
         setSixthSelectedIdol={setSixthSelectedIdol}
         setSeventhSelectedIdol={setSeventhSelectedIdol}
       />
+      <Footer />
     </div>
   );
 };

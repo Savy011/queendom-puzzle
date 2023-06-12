@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { Stage, Layer, Image, Text } from 'react-konva';
 import { Idol, Lang } from '../type';
 import useImage from 'use-image';
 import { theme } from '../theme';
 import Konva from 'konva';
+
+export let canvasWidth: number;
+export let canvasHeight: number;
 
 interface Props {
   name: string;
@@ -39,6 +43,43 @@ const Canvas = ({
   let fifthUrl;
   let sixthUrl;
   let seventhUrl;
+
+  useEffect(() => {
+    function canvasResizer() {
+      const container = document.querySelector('.canvas-parent');
+
+      if (container) {
+        const computedStyle = getComputedStyle(container);
+        let containerWidth = container.clientWidth;
+        let containerHeight = container.clientHeight;
+
+        containerWidth -=
+          parseFloat(computedStyle.paddingLeft) +
+          parseFloat(computedStyle.paddingRight);
+        containerHeight -=
+          parseFloat(computedStyle.paddingTop) +
+          parseFloat(computedStyle.paddingBottom);
+
+        canvasWidth = containerWidth;
+        canvasHeight = containerHeight;
+        const newScale = containerWidth / stageDetails.width;
+
+        if (stageRef.current) {
+          stageRef.current.scale({ x: newScale, y: newScale });
+          stageRef.current.batchDraw();
+        }
+      }
+    }
+
+    canvasResizer();
+
+    window.addEventListener('resize', canvasResizer);
+
+    return () => {
+      window.removeEventListener('resize', canvasResizer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (firstSelectedIdol === null) {
     firstUrl = placeholderUrl;
@@ -97,23 +138,6 @@ const Canvas = ({
     x: 0,
     y: 0
   };
-
-  let scale: number = 1;
-
-  function canvasResizer() {
-    const container = document.querySelector('.canvas-parent');
-
-    if (container) {
-      const computedStyle = getComputedStyle(container);
-      let containerWidth = container.clientWidth;
-
-      containerWidth -=
-        parseFloat(computedStyle.paddingLeft) +
-        parseFloat(computedStyle.paddingRight);
-
-      scale = containerWidth / stageDetails.width;
-    }
-  }
 
   const firstImageDetails = {
     originalDimensions: {
@@ -225,7 +249,7 @@ const Canvas = ({
       value: name,
       FontFace: 'Abenda',
       color: theme.textPrimary,
-      size: 20,
+      size: 18,
       style: 'bold',
       id: 'user-name',
       dimensions: {
@@ -239,16 +263,11 @@ const Canvas = ({
     }
   };
 
-  canvasResizer();
-
-  window.addEventListener('resize', canvasResizer);
-
   return (
     <Stage
       ref={stageRef}
-      width={stageDetails.width * scale}
-      height={stageDetails.height * scale}
-      scale={{ x: scale, y: scale }}
+      width={stageDetails.width}
+      height={stageDetails.height}
     >
       <Layer>
         <Image

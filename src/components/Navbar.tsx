@@ -1,4 +1,6 @@
+import useWindowDimensions from '../services/hooks';
 import { Lang } from '../type';
+import { MobileMenu, PCMenu } from './NavbarMenu';
 
 interface Props {
   language: Lang;
@@ -6,12 +8,14 @@ interface Props {
 }
 
 const Navbar = ({ language, setLanguage }: Props) => {
+  const windowDimensions = useWindowDimensions();
+
   return (
     <>
       <div className="navbar bg-secondary">
         <div className="flex-1 font-bold md:pl-3 md:py-3 pl-1 py-1">
           {language === Lang.eng ? (
-            <button className="w-fit text-xl md:text-4xl text-primary font-abenda">
+            <button className="flex text-center w-fit text-xl md:text-4xl text-primary font-abenda">
               Queendom Puzzle
             </button>
           ) : (
@@ -20,22 +24,11 @@ const Navbar = ({ language, setLanguage }: Props) => {
             </button>
           )}
         </div>
-        <div className="join flex-none pr-1 md:pr-3 md:py-3 align-middle">
-          <button
-            className="btn btn-accent px-4 join-item text-secondary font-bold tooltip tooltip-bottom tooltip-accent"
-            data-tip="English"
-            onClick={(e) => setLanguage(Lang.eng)}
-          >
-            ENG
-          </button>
-          <button
-            className="btn btn-accent px-4 join-item text-secondary font-bold tooltip tooltip-bottom tooltip-accent"
-            data-tip="Korean"
-            onClick={(e) => setLanguage(Lang.kor)}
-          >
-            한글
-          </button>
-        </div>
+        {windowDimensions.width >= 767 ? (
+          <PCMenu setLanguage={setLanguage} />
+        ) : (
+          <MobileMenu setLanguage={setLanguage} />
+        )}
       </div>
     </>
   );
