@@ -17,7 +17,7 @@ const DownloadButton = ({
   const handleDownload = () => {
     const dataURL = stageRef.current?.toDataURL({
       mimeType: 'image/jpeg',
-      pixelRatio: 2
+      pixelRatio: 3
     });
     if (dataURL === undefined || dataURL === '') {
       return window.alert('Some Error Occured');

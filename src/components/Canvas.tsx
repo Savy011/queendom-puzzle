@@ -89,8 +89,7 @@ const Canvas = ({
   const [fifthIdolImage] = useImage(fifthUrl, 'anonymous');
   const [sixthIdolImage] = useImage(sixthUrl, 'anonymous');
   const [seventhIdolImage] = useImage(seventhUrl, 'anonymous');
-  console.log(firstIdolImage);
-  const [bgImage] = useImage(language);
+  const [bgImage] = useImage(language, 'anonymous');
 
   const stageDetails = {
     width: 450,
