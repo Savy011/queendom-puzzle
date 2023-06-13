@@ -239,7 +239,7 @@ const Canvas = ({
       height: 103.5
     },
     position: {
-      x: 173,
+      x: 173.5,
       y: 308
     }
   };

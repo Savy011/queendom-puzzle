@@ -48,7 +48,7 @@ const idolList: Array<Idol> = [
   },
   {
     nameEng: 'Juri',
-    nameKor: '쥬리)',
+    nameKor: '쥬리',
     url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/juri.png'
   },
   {
