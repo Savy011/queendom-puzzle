@@ -31,7 +31,7 @@ const ScrollButton = () => {
       <div>
         {visible ? (
           <button
-            className="btn btn-primary btn-square fixed right-0 bottom-0 m-3 mb-6 p-1 border-quaternary border-2 justify-center align-middle"
+            className="btn btn-primary btn-square fixed right-0 bottom-3 m-3 mb-6 p-1 border-quaternary border-2 justify-center align-middle"
             onClick={scrollToTop}
           >
             <FontAwesomeIcon

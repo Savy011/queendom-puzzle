@@ -1,6 +1,6 @@
 import Konva from 'konva';
 import { Lang, userData } from '../type';
-import { canvasHeight, canvasWidth } from './Canvas';
+import { canvasWidth } from './Canvas';
 import useWindowDimensions from '../services/hooks';
 import { getHash, searchQuery, visitorsRef } from '../services/firestore';
 import { getDoc, getDocs, updateDoc } from 'firebase/firestore';
@@ -29,14 +29,14 @@ const DownloadButton = ({
     const dataURLPC = stageRef.current?.toDataURL({
       mimeType: 'image/png',
       width: canvasWidth,
-      height: canvasHeight,
-      pixelRatio: 2
+      height: canvasWidth,
+      pixelRatio: 3
     });
 
     const dataURLMobile = stageRef.current?.toDataURL({
       mimeType: 'image/png',
       width: canvasWidth,
-      height: canvasHeight,
+      height: canvasWidth,
       pixelRatio: 4
     });
 
