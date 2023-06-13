@@ -15,3 +15,15 @@
 body {
 	background-color: theme(colors.tertiary);
 }
+
+.flow {
+	-webkit-animation: bg-flow 10s linear infinite;
+	-moz-animation: bg-flow 10s linear infinite;
+	animation: bg-flow 5s linear infinite;
+}
+
+@keyframes bg-flow {
+	to {
+		background-position: 480px 0;
+	}
+}

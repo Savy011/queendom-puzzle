@@ -1,6 +1,15 @@
 import { useEffect, useState, useRef } from 'react';
 import Konva from 'konva';
-import { Idol, Lang, ParsedData } from './type';
+import {
+  addDoc,
+  doc,
+  getCountFromServer,
+  getDocs,
+  onSnapshot,
+  runTransaction,
+  setDoc
+} from 'firebase/firestore';
+import { Idol, Lang, ParsedData, userData } from './type';
 import idolList from './idolList';
 import Navbar from './components/Navbar';
 import InputCard from './components/InputCard';
@@ -9,9 +18,18 @@ import NameInputCard from './components/NameInputCard';
 import AlertModal from './components/Alert';
 import ScrollButton from './components/ScrollButton';
 import Footer from './components/Footer';
+import {
+  firestore,
+  getHash,
+  searchQuery,
+  usersRef,
+  visitorsRef
+} from './services/firestore';
 
 const App = () => {
   const [name, setName] = useState('');
+  const [visitors, setVisitors] = useState<number | null>(null);
+  const [users, setUsers] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [firstSelectedIdol, setFirstSelectedIdol] = useState<Idol | null>(null);
   const [secondSelectedIdol, setSecondSelectedIdol] = useState<Idol | null>(
@@ -28,6 +46,75 @@ const App = () => {
   const stageRef = useRef<Konva.Stage>(null);
 
   useEffect(() => {
+    const getVisitors = async () => {
+      onSnapshot(visitorsRef, (doc) => {
+        if (doc.exists()) {
+          setVisitors(doc.data().totalPageVisits);
+        } else {
+          console.log('No Such Document');
+        }
+      });
+    };
+
+    const getUsers = async () => {
+      const snapshot = await getCountFromServer(usersRef);
+      setUsers(snapshot.data().count);
+    };
+
+    let userToUpdate: string;
+    const getData = async () => {
+      await runTransaction(firestore, async (transaction) => {
+        const visitorDoc = await transaction.get(visitorsRef);
+        if (visitorDoc.exists()) {
+          const hashedAddress = await getHash();
+
+          const querySnapshot = await getDocs(searchQuery(hashedAddress));
+          let queryResult: Array<userData> = [];
+          querySnapshot.forEach((doc) => {
+            userToUpdate = doc.id;
+            queryResult.push(doc.data() as userData);
+          });
+
+          if (queryResult.length === 0) {
+            const newAddress = {
+              userAddress: hashedAddress,
+              firstVisitedAt: new Date(),
+              lastVisitedAt: new Date()
+            };
+            const newVisitorCount: number =
+              visitorDoc.data().totalPageVisits + 1;
+
+            await addDoc(usersRef, newAddress);
+
+            transaction.update(visitorsRef, {
+              totalPageVisits: newVisitorCount
+            });
+          } else {
+            await setDoc(
+              doc(firestore, `counters/visitors/users/${userToUpdate}`),
+              { lastVisitedAt: new Date() },
+              { merge: true }
+            );
+            const newVisitorCount: number =
+              visitorDoc.data().totalPageVisits + 1;
+            transaction.update(visitorsRef, {
+              totalPageVisits: newVisitorCount
+            });
+          }
+        } else {
+          console.error('error occured while fetching visitor count');
+        }
+      });
+    };
+
+    try {
+      getData();
+      getVisitors();
+      getUsers();
+    } catch (e) {
+      console.log(e);
+    }
+
     const previousData = localStorage.getItem('qdm-pzl');
     if (previousData !== null) {
       const parsedData: ParsedData = JSON.parse(previousData);
@@ -62,7 +149,12 @@ const App = () => {
 
   return (
     <div className="h-full w-screen">
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        visitors={visitors}
+        users={users}
+      />
       {name === '' ? (
         <NameInputCard language={language} name={name} setName={setName} />
       ) : (

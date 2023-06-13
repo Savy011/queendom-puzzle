@@ -29,7 +29,7 @@ interface Props {
 const InputCard = (props: Props) => {
   return (
     <>
-      <div className="card bg-secondary sm:mx-3 p-2 md:p-4 mb-3 md:mb-0 w-full min-w-fit max-w[512px] h-fit md:min-w-[512px] md:max-w-[512px] align-middle shadow-md shadow-primary">
+      <div className="card bg-secondary sm:mx-3 p-2 md:p-4 mb-16 md:mb-0 w-full min-w-fit max-w[512px] h-fit md:min-w-[512px] md:max-w-[512px] align-middle shadow-md shadow-primary">
         <IdolsSelection
           language={props.language}
           idolList={props.idolList}

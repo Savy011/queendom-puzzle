@@ -9,6 +9,12 @@ export type Idol = {
   url: string;
 };
 
+export type userData = {
+  hashedAddress: string;
+  lastVisitedAt: Date;
+  firstVisitedAt: Date;
+};
+
 export type Background = {
   name: string;
   eng: string;
