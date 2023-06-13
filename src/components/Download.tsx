@@ -59,10 +59,8 @@ const DownloadButton = ({
     if (queryResult.length === 0) {
       const visitorDoc = await getDoc(visitorsRef);
 
-      if (visitorDoc.exists()) {
-        newUniqueVisitorCount = visitorDoc.data().uniqueUsers + 1;
-        await updateDoc(visitorsRef, { uniqueUsers: newUniqueVisitorCount });
-      }
+      newUniqueVisitorCount = visitorDoc.data()?.uniqueUsers + 1;
+      await updateDoc(visitorsRef, { uniqueUsers: newUniqueVisitorCount });
     }
 
     if (windowDimensions.width >= 767) {
