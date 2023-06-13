@@ -33,7 +33,7 @@ const LangButton = (props: Omit<Props, 'visitors' | 'users'>) => {
         data-tip="Korean"
         onClick={(e) => props.setLanguage(Lang.kor)}
       >
-        한글
+        한국어
       </button>
     </div>
   );
