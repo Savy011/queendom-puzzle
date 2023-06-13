@@ -5,29 +5,35 @@ import { MobileMenu, PCMenu } from './NavbarMenu';
 interface Props {
   language: Lang;
   setLanguage: React.Dispatch<React.SetStateAction<Lang>>;
+  visitors: number | null;
+  users: number | null;
 }
 
-const Navbar = ({ language, setLanguage }: Props) => {
+const Navbar = ({ language, setLanguage, visitors, users }: Props) => {
   const windowDimensions = useWindowDimensions();
 
   return (
     <>
-      <div className="navbar bg-secondary">
-        <div className="flex-1 font-bold md:pl-3 md:py-3 pl-1 py-1">
+      <div className="flow navbar max-h-fit bg-background bg-repeat flex justify-between">
+        <div className="font-bold w-fit mr-2 md:pl-3 md:py-3">
           {language === Lang.eng ? (
-            <button className="flex text-center w-fit text-xl md:text-4xl text-primary font-abenda">
+            <button className="btn btn-ghost btn-disabled backdrop-blur-md flex w-full md:w-fit text-center justify-center items-center sm:m-auto text-3xl pt-2 md:text-4xl text-primary font-abenda whitespace-nowrap min-w-fit">
               Queendom Puzzle
             </button>
           ) : (
-            <button className="w-fit text-3xl text-primary font-han">
+            <button className="btn btn-ghost btn-disabled backdrop-blur-md w-fit text-3xl text-primary font-han">
               퀸덤 퍼즐
             </button>
           )}
         </div>
         {windowDimensions.width >= 767 ? (
-          <PCMenu setLanguage={setLanguage} />
+          <PCMenu setLanguage={setLanguage} visitors={visitors} users={users} />
         ) : (
-          <MobileMenu setLanguage={setLanguage} />
+          <MobileMenu
+            setLanguage={setLanguage}
+            visitors={visitors}
+            users={users}
+          />
         )}
       </div>
     </>

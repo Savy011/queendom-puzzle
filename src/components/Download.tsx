@@ -1,7 +1,9 @@
 import Konva from 'konva';
-import { Lang } from '../type';
+import { Lang, userData } from '../type';
 import { canvasHeight, canvasWidth } from './Canvas';
 import useWindowDimensions from '../services/hooks';
+import { getHash, searchQuery, visitorsRef } from '../services/firestore';
+import { getDoc, getDocs, updateDoc } from 'firebase/firestore';
 
 const DownloadButton = ({
   language,
@@ -23,7 +25,7 @@ const DownloadButton = ({
     document.body.removeChild(link);
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     const dataURLPC = stageRef.current?.toDataURL({
       mimeType: 'image/png',
       width: canvasWidth,
@@ -45,6 +47,22 @@ const DownloadButton = ({
       dataURLMobile === ''
     ) {
       return window.alert('Some Error Occured');
+    }
+
+    let queryResult: Array<userData> = [];
+    const hashedAddress = await getHash();
+    const querySnapshot = await getDocs(searchQuery(hashedAddress));
+    querySnapshot.forEach((doc) => {
+      queryResult.push(doc.data() as userData);
+    });
+    let newUniqueVisitorCount: number;
+    if (queryResult.length === 0) {
+      const visitorDoc = await getDoc(visitorsRef);
+
+      if (visitorDoc.exists()) {
+        newUniqueVisitorCount = visitorDoc.data().uniqueUsers + 1;
+        await updateDoc(visitorsRef, { uniqueUsers: newUniqueVisitorCount });
+      }
     }
 
     if (windowDimensions.width >= 767) {

@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        background: "url('/.github/images/background.png')"
+      },
       fontFamily: {
         abenda: ['Abenda', 'sans-serif'],
         han: ['SourceHanSerif', 'sans-serif']
