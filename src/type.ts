@@ -1,6 +1,6 @@
 export enum Lang {
-  eng = 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/Forms/GirlGroupAssembleForm_ENG.png',
-  kor = 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/Forms/GirlGroupAssembleForm_KOR.png'
+  eng = '../.github/images/Forms/GirlGroupAssembleForm_ENG.png',
+  kor = '../.github/images/Forms/GirlGroupAssembleForm_KOR.png'
 }
 
 export type Idol = {

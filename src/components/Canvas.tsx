@@ -21,8 +21,7 @@ interface Props {
   stageRef: React.RefObject<Konva.Stage>;
 }
 
-const placeholderUrl =
-  'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/placeholder.png';
+const placeholderUrl = '../../.github/images/members_images/placeholder.png';
 
 const Canvas = ({
   name,
