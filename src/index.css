@@ -4,12 +4,12 @@
 
 @font-face {
 	font-family: 'Abenda';
-	src: url('../.github/fonts/Abenda.ttf');
+	src: url('../assets/fonts/Abenda.ttf');
 }
 
 @font-face {
 	font-family: 'SourceHanSerif';
-	src: url('../.github/fonts/SourceHanSerifK-SemiBold.otf');
+	src: url('../assets/fonts/SourceHanSerifK-SemiBold.otf');
 }
 
 body {
