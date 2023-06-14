@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        background: "url('/assets/images/background.png')"
+        background:
+          "url('https://res.cloudinary.com/dobbtfy4u/image/upload/v1686749476/qdm-pzl/background_qgrcqs.png')"
       },
       fontFamily: {
         pretendard: ['Pretendard', 'sans-serif'],
