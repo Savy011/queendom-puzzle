@@ -7,6 +7,7 @@ module.exports = {
         background: "url('/assets/images/background.png')"
       },
       fontFamily: {
+        pretendard: ['Pretendard', 'sans-serif'],
         abenda: ['Abenda', 'sans-serif'],
         han: ['SourceHanSerif', 'sans-serif']
       },

@@ -12,6 +12,11 @@
 	src: url('../assets/fonts/SourceHanSerifK-SemiBold.otf');
 }
 
+@font-face {
+	font-family: 'Pretendard';
+	src: url('../assets/fonts/Pretendard-Regular.ttf');
+}
+
 body {
 	background-color: theme(colors.tertiary);
 }
