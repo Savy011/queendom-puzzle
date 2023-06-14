@@ -1,6 +1,6 @@
 export enum Lang {
-  eng = '../.github/images/Forms/GirlGroupAssembleForm_ENG.png',
-  kor = '../.github/images/Forms/GirlGroupAssembleForm_KOR.png'
+  eng = '../assets/images/Forms/GirlGroupAssembleForm_ENG.png',
+  kor = '../assets/images/Forms/GirlGroupAssembleForm_KOR.png'
 }
 
 export type Idol = {

@@ -21,7 +21,7 @@ interface Props {
   stageRef: React.RefObject<Konva.Stage>;
 }
 
-const placeholderUrl = '../../.github/images/members_images/placeholder.png';
+const placeholderUrl = '../../assets/images/members_images/placeholder.png';
 
 const Canvas = ({
   name,
