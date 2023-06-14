@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        background: "url('/.github/images/background.png')"
+        background: "url('/assets/images/background.png')"
       },
       fontFamily: {
         abenda: ['Abenda', 'sans-serif'],
