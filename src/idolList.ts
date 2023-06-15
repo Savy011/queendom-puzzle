@@ -28,7 +28,7 @@ const idolList: Array<Idol> = [
   },
   {
     nameEng: 'Dohwa',
-    nameKor: '임도화',
+    nameKor: '도화',
     url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/rcwvay0af1pi0jfnprac.png'
   },
   {
@@ -58,12 +58,12 @@ const idolList: Array<Idol> = [
   },
   {
     nameEng: 'Jiwoo',
-    nameKor: '이지우',
+    nameKor: '지우',
     url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730695/qdm-pzl/member_images/zjpic6y7dga8q6qyjyxj.png'
   },
   {
     nameEng: 'Soojin',
-    nameKor: '이수진',
+    nameKor: '수진',
     url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730698/qdm-pzl/member_images/xuxjygg7u26i35b9lpkd.png'
   },
   {
@@ -73,7 +73,7 @@ const idolList: Array<Idol> = [
   },
   {
     nameEng: 'Soeun',
-    nameKor: '박소은',
+    nameKor: '소은',
     url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/vangw1oqyhzsda5acppf.png'
   },
   {
@@ -118,7 +118,7 @@ const idolList: Array<Idol> = [
   },
   {
     nameEng: 'Seoyeon',
-    nameKor: '윤서연',
+    nameKor: '서연',
     url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/prpiiknlmyoviutswbbu.png'
   },
   {

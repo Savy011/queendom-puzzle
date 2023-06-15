@@ -2,11 +2,14 @@ import Konva from 'konva';
 import { Idol, Lang } from '../type';
 import IdolsSelection from './IdolsSelection';
 import DownloadButton from './Download';
+import LabelToggle from './LabelToggle';
 
 interface Props {
   language: Lang;
   idolList: Idol[];
   name: string;
+  showLabels: boolean;
+  setShowLabels: React.Dispatch<React.SetStateAction<boolean>>;
   setName: React.Dispatch<React.SetStateAction<string>>;
   firstSelectedIdol: Idol | null;
   secondSelectedIdol: Idol | null;
@@ -48,6 +51,11 @@ const InputCard = (props: Props) => {
           setSixthSelectedIdol={props.setSixthSelectedIdol}
           setSeventhSelectedIdol={props.setSeventhSelectedIdol}
         />
+        <LabelToggle
+          showLabels={props.showLabels}
+          setShowLabels={props.setShowLabels}
+        />
+        <div className="p-1" />
         <DownloadButton
           language={props.language}
           stageRef={props.stageRef}

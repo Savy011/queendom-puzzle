@@ -5,6 +5,7 @@ import Konva from 'konva';
 interface Props {
   language: Lang;
   name: string;
+  showLabels: boolean;
   firstSelectedIdol: Idol | null;
   secondSelectedIdol: Idol | null;
   thirdSelectedIdol: Idol | null;
@@ -21,6 +22,7 @@ const Preview = (props: Props) => {
       <Canvas
         name={props.name}
         stageRef={props.stageRef}
+        showLabels={props.showLabels}
         firstSelectedIdol={props.firstSelectedIdol}
         secondSelectedIdol={props.secondSelectedIdol}
         thirdSelectedIdol={props.thirdSelectedIdol}
