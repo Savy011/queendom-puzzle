@@ -1,12 +1,13 @@
 export enum Lang {
-  eng = 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/Forms/GirlGroupAssembleForm_ENG.png',
-  kor = 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/Forms/GirlGroupAssembleForm_KOR.png'
+  kor = 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730909/qdm-pzl/forms/GirlGroupAssembleForm_KOR_hw0umv.png',
+  eng = 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730909/qdm-pzl/forms/GirlGroupAssembleForm_ENG_dmmbzp.png'
 }
 
 export type Idol = {
   nameEng: string;
   nameKor: string;
   url: string;
+  //urlAlt: string;
 };
 
 export type userData = {

@@ -2,134 +2,134 @@ import { Idol } from './type';
 
 const idolList: Array<Idol> = [
   {
-    nameEng: 'Bo Ra',
+    nameEng: 'Bora',
     nameKor: '보라',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/bora.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/rxrzqfvnnoscb3ugfvqu.png'
   },
   {
-    nameEng: 'Chae Rin',
+    nameEng: 'Chaerin',
     nameKor: '채린',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/chaerin.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/qwaacnc5q45zqosw2bmc.png'
   },
   {
     nameEng: 'Elly',
     nameKor: '엘리',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/elly.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/pjq1wfkxejdu5ats9ou4.png'
   },
   {
     nameEng: 'Fye',
     nameKor: '파이',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/fye.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/hw6ete5v6son9cmxsuif.png'
   },
   {
     nameEng: 'Hwiseo',
     nameKor: '휘서',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/hwiseo.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/jriohmciennpjfgumyya.png'
   },
   {
-    nameEng: 'Im Do Hwa',
+    nameEng: 'Dohwa',
     nameKor: '임도화',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/dohwa.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/rcwvay0af1pi0jfnprac.png'
   },
   {
-    nameEng: 'Ji Won',
+    nameEng: 'Jiwon',
     nameKor: '지원',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jiwon.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/x1tdp3uzhyfxeodjkjgd.png'
   },
   {
     nameEng: 'Jihan',
     nameKor: '지한',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jihan.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730694/qdm-pzl/member_images/bfnlxrfsc79bk8f66cvt.png'
   },
   {
     nameEng: 'JooE',
     nameKor: '주이',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jooe.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730695/qdm-pzl/member_images/geqfoo24efdzuocicaqm.png'
   },
   {
     nameEng: 'Juri',
     nameKor: '쥬리',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/juri.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/xngp8j9stdfihv5gdxst.png'
   },
   {
     nameEng: 'Kei',
     nameKor: '케이',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/kei.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/akwrhihbhmnqtqo9itb8.png'
   },
   {
-    nameEng: 'Lee Jiwoo',
+    nameEng: 'Jiwoo',
     nameKor: '이지우',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/jiwoo.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730695/qdm-pzl/member_images/zjpic6y7dga8q6qyjyxj.png'
   },
   {
-    nameEng: 'Lee Soojin',
+    nameEng: 'Soojin',
     nameKor: '이수진',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/soojin.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730698/qdm-pzl/member_images/xuxjygg7u26i35b9lpkd.png'
   },
   {
     nameEng: 'Nana',
     nameKor: '나나',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/nana.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/xqr3t1pryxybvofz4coz.png'
   },
   {
-    nameEng: 'Park Soeun',
+    nameEng: 'Soeun',
     nameKor: '박소은',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/soeun.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/vangw1oqyhzsda5acppf.png'
   },
   {
     nameEng: 'Riina',
     nameKor: '리이나',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/riina.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/ralgsz25yrlvr5rug7bk.png'
   },
   {
     nameEng: 'Sangah',
     nameKor: '상아',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/sangah.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/dn9n6fr3bg8tpmawnohv.png'
   },
   {
     nameEng: 'Miru',
     nameKor: '미루',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/miru.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/zxxlwutv6yfx1bawg3vd.png'
   },
   {
     nameEng: 'Suyun',
     nameKor: '수윤',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/suyun.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730698/qdm-pzl/member_images/ev8zvcbxwmokp6vzschx.png'
   },
   {
     nameEng: 'Wooyeon',
     nameKor: '우연',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/wooyeon.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/mwhjeqlqpjcmptopqdy3.png'
   },
   {
     nameEng: 'Yeeun',
     nameKor: '예은',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeeun.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730698/qdm-pzl/member_images/fndcmdwxxdtiaw7ze4ys.png'
   },
   {
     nameEng: 'Yeonhee',
     nameKor: '연희',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeonhee.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730699/qdm-pzl/member_images/pxsztvxuqua1zjy1odys.png'
   },
   {
     nameEng: 'Yeoreum',
     nameKor: '여름',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yeoreum.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730699/qdm-pzl/member_images/afjh8b55tfidgatlctrf.png'
   },
   {
-    nameEng: 'Yoon Seoyeon',
+    nameEng: 'Seoyeon',
     nameKor: '윤서연',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/seoyeon.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730697/qdm-pzl/member_images/prpiiknlmyoviutswbbu.png'
   },
   {
     nameEng: 'Yuki',
     nameKor: '유키',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/yuki.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730699/qdm-pzl/member_images/us7libw4juaxq0ogp1zu.png'
   },
   {
     nameEng: 'Zoa',
     nameKor: '조아',
-    url: 'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/zoa.png'
+    url: 'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730699/qdm-pzl/member_images/xlgyb8ci1a9xkzkzhash.png'
   }
 ];
 

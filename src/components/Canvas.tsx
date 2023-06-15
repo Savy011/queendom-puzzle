@@ -22,7 +22,7 @@ interface Props {
 }
 
 const placeholderUrl =
-  'https://raw.githubusercontent.com/Savy011/queendom-puzzle/main/.github/images/members_images/placeholder.png';
+  'https://res.cloudinary.com/dobbtfy4u/image/upload/v1686730696/qdm-pzl/member_images/mmkhapvhyaczyfls85dx.png';
 
 const Canvas = ({
   name,
@@ -247,9 +247,9 @@ const Canvas = ({
   const textDetails = {
     name: {
       value: name,
-      FontFace: 'Abenda',
+      FontFace: 'Pretendard',
       color: theme.textPrimary,
-      size: 18,
+      size: 14,
       style: 'bold',
       id: 'user-name',
       dimensions: {
@@ -257,7 +257,7 @@ const Canvas = ({
         height: 50
       },
       position: {
-        x: 353,
+        x: 350,
         y: 407
       }
     }

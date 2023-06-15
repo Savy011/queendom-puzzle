@@ -39,7 +39,7 @@ const NameInputCard = ({ name, setName, language }: Props) => {
           />
           <label className="label">
             <span className="label-text-alt text-quaternary">
-              {language === Lang.eng ? 'Upto 7 Characters' : '최대 7자'}
+              {language === Lang.eng ? 'Upto 10 Characters' : '최대 7자'}
             </span>
           </label>
           <button
