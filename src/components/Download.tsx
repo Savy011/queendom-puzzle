@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Konva from 'konva';
 import { Lang, userData } from '../type';
 import { canvasWidth } from './Canvas';
@@ -15,7 +16,6 @@ const DownloadButton = ({
   saveData: () => void;
 }) => {
   const windowDimensions = useWindowDimensions();
-
   const downloadURI = (uri: string, name: string) => {
     const link = document.createElement('a');
     link.download = name;
@@ -72,12 +72,14 @@ const DownloadButton = ({
   };
 
   return (
-    <button
-      className="btn btn-accent w-full text-secondary"
-      onClick={handleDownload}
-    >
-      {language === Lang.eng ? 'Download Image' : '그룹을 다운로드하세요'}
-    </button>
+    <div>
+      <button
+        className="btn btn-accent w-full text-secondary"
+        onClick={handleDownload}
+      >
+        {language === Lang.eng ? 'Download Image' : '그룹을 다운로드하세요'}
+      </button>
+    </div>
   );
 };
 

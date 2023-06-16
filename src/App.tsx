@@ -31,6 +31,7 @@ const App = () => {
   const [visitors, setVisitors] = useState<number | null>(null);
   const [users, setUsers] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [showLabels, setShowLabels] = useState(false);
   const [firstSelectedIdol, setFirstSelectedIdol] = useState<Idol | null>(null);
   const [secondSelectedIdol, setSecondSelectedIdol] = useState<Idol | null>(
     null
@@ -61,8 +62,8 @@ const App = () => {
       setUsers(snapshot.data().count);
     };
 
-    let userToUpdate: string;
     const getData = async () => {
+      let userToUpdate: string;
       await runTransaction(firestore, async (transaction) => {
         const visitorDoc = await transaction.get(visitorsRef);
         if (visitorDoc.exists()) {
@@ -148,7 +149,7 @@ const App = () => {
   };
 
   return (
-    <div className="h-full w-screen">
+    <div className="h-full w-screen font-pretendard">
       <Navbar
         language={language}
         setLanguage={setLanguage}
@@ -158,8 +159,10 @@ const App = () => {
       {name === '' ? (
         <NameInputCard language={language} name={name} setName={setName} />
       ) : (
-        <div className="grid grid-flow-row mt-6 mb-8 md:grid-flow-col w-screen px-5 justify-around sm:justify-evenly">
+        <div className="grid grid-flow-row mt-6 mb-8 md:grid-flow-col w-screen px-5 justify-around md:justify-around sm:justify-evenly">
           <InputCard
+            showLabels={showLabels}
+            setShowLabels={setShowLabels}
             language={language}
             idolList={idolList}
             name={name}
@@ -185,6 +188,7 @@ const App = () => {
             stageRef={stageRef}
             name={name}
             language={language}
+            showLabels={showLabels}
             firstSelectedIdol={firstSelectedIdol}
             secondSelectedIdol={secondSelectedIdol}
             thirdSelectedIdol={thirdSelectedIdol}

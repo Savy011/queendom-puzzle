@@ -1,0 +1,29 @@
+name: Health Check!
+
+on:
+  cron: '0 * * * *'
+
+jobs:
+  url-health-check:
+    runs-in: ubuntu-20.04
+    steps:
+      - name: GET deployed app url
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://queendom-puzzle.netlify.com
+          max-attempts: 2
+          retry-delay: 7s
+      - name: Health Check passed
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ success() }}
+        with:
+          severity: info
+          details: Health Check passed, Website is running fine
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Health Check failed
+        uses: rjstone/discord-webhook-notify@v1
+        if: ${{ failure() }}
+        with:
+          severity: info
+          details: Health Check failed, check website status on netlify dashboard
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }} 
