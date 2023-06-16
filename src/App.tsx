@@ -103,7 +103,7 @@ const App = () => {
             });
           }
         } else {
-          console.error('error occured while fetching visitor count');
+          console.error('error occurred while fetching visitor count');
         }
       });
     };
