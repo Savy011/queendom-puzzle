@@ -46,7 +46,7 @@ const DownloadButton = ({
       dataURLMobile === undefined ||
       dataURLMobile === ''
     ) {
-      return window.alert('Some Error Occured');
+      return window.alert('Some Error Occurred');
     }
 
     let queryResult: Array<userData> = [];
