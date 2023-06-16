@@ -354,172 +354,168 @@ const Canvas = ({
         />
       </Layer>
 
-      {showLabels ? (
-        <Layer>
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={firstImageDetails.position.x + 0.5}
-            y={firstImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? firstSelectedIdol?.nameEng.toUpperCase()
-                : firstSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={190}
-            y={158}
-          />
+      <Layer visible={showLabels}>
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={firstImageDetails.position.x + 0.5}
+          y={firstImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? firstSelectedIdol?.nameEng.toUpperCase()
+              : firstSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={190}
+          y={158}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={secondImageDetails.position.x}
-            y={secondImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? secondSelectedIdol?.nameEng.toUpperCase()
-                : secondSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={87}
-            y={262}
-          />
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={secondImageDetails.position.x}
+          y={secondImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? secondSelectedIdol?.nameEng.toUpperCase()
+              : secondSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={87}
+          y={262}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={thirdImageDetails.position.x}
-            y={thirdImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? thirdSelectedIdol?.nameEng.toUpperCase()
-                : thirdSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={190}
-            y={262}
-          />
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={thirdImageDetails.position.x}
+          y={thirdImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? thirdSelectedIdol?.nameEng.toUpperCase()
+              : thirdSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={190}
+          y={262}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={forthImageDetails.position.x}
-            y={forthImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? forthSelectedIdol?.nameEng.toUpperCase()
-                : forthSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={293}
-            y={262}
-          />
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={forthImageDetails.position.x}
+          y={forthImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? forthSelectedIdol?.nameEng.toUpperCase()
+              : forthSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={293}
+          y={262}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={fifthImageDetails.position.x}
-            y={fifthImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? fifthSelectedIdol?.nameEng.toUpperCase()
-                : fifthSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={138}
-            y={324}
-          />
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={fifthImageDetails.position.x}
+          y={fifthImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? fifthSelectedIdol?.nameEng.toUpperCase()
+              : fifthSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={138}
+          y={324}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={sixthImageDetails.position.x}
-            y={sixthImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? sixthSelectedIdol?.nameEng.toUpperCase()
-                : sixthSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={241}
-            y={324}
-          />
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={sixthImageDetails.position.x}
+          y={sixthImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? sixthSelectedIdol?.nameEng.toUpperCase()
+              : sixthSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={241}
+          y={324}
+        />
 
-          <Image
-            image={nameLabel}
-            width={103.5}
-            height={103.5}
-            x={seventhImageDetails.position.x}
-            y={seventhImageDetails.position.y - 0.5}
-          />
-          <Text
-            text={
-              language === Lang.eng
-                ? seventhSelectedIdol?.nameEng.toUpperCase()
-                : seventhSelectedIdol?.nameKor
-            }
-            fontSize={10}
-            width={70}
-            fontVariant="600"
-            align="center"
-            fontFamily="Pretendard"
-            fill={theme.white}
-            x={190}
-            y={386}
-          />
-        </Layer>
-      ) : (
-        <Layer></Layer>
-      )}
+        <Image
+          image={nameLabel}
+          width={103.5}
+          height={103.5}
+          x={seventhImageDetails.position.x}
+          y={seventhImageDetails.position.y - 0.5}
+        />
+        <Text
+          text={
+            language === Lang.eng
+              ? seventhSelectedIdol?.nameEng.toUpperCase()
+              : seventhSelectedIdol?.nameKor
+          }
+          fontSize={10}
+          width={70}
+          fontVariant="600"
+          align="center"
+          fontFamily="Pretendard"
+          fill={theme.white}
+          x={190}
+          y={386}
+        />
+      </Layer>
     </Stage>
   );
 };

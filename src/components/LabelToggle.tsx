@@ -6,6 +6,7 @@ interface Props {
 }
 
 const LabelToggle = (props: Props) => {
+  console.log(props.showLabels);
   return (
     <div className="form-control border-[1px] font-pretendard font-bold border-primary px-3 text-quaternary py-1 rounded-lg">
       <label className="label cursor-pointer justify-between">
@@ -13,7 +14,11 @@ const LabelToggle = (props: Props) => {
         <Switch
           checked={props.showLabels}
           onChange={props.setShowLabels}
-          className={`${props.showLabels ? 'bg-primary' : 'bg-slate-600'}
+          className={`${
+            props.showLabels
+              ? 'bg-primary hover:bg-primary-focus'
+              : 'bg-slate-600 hover:bg-slate-700'
+          }
           relative inline-flex h-6 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
         >
           <span

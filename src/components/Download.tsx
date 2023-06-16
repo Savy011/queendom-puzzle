@@ -16,20 +16,6 @@ const DownloadButton = ({
   saveData: () => void;
 }) => {
   const windowDimensions = useWindowDimensions();
-  const dataURLPC = stageRef.current?.toDataURL({
-    mimeType: 'image/png',
-    width: canvasWidth,
-    height: canvasWidth,
-    pixelRatio: 3
-  });
-
-  const dataURLMobile = stageRef.current?.toDataURL({
-    mimeType: 'image/png',
-    width: canvasWidth,
-    height: canvasWidth,
-    pixelRatio: 4
-  });
-
   const downloadURI = (uri: string, name: string) => {
     const link = document.createElement('a');
     link.download = name;
@@ -40,6 +26,20 @@ const DownloadButton = ({
   };
 
   const handleDownload = async () => {
+    const dataURLPC = stageRef.current?.toDataURL({
+      mimeType: 'image/png',
+      width: canvasWidth,
+      height: canvasWidth,
+      pixelRatio: 3
+    });
+
+    const dataURLMobile = stageRef.current?.toDataURL({
+      mimeType: 'image/png',
+      width: canvasWidth,
+      height: canvasWidth,
+      pixelRatio: 4
+    });
+
     if (
       dataURLPC === undefined ||
       dataURLPC === '' ||
