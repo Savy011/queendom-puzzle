@@ -10,7 +10,7 @@ const LabelToggle = (props: Props) => {
   return (
     <div className="form-control border-[1px] font-pretendard font-bold border-primary px-3 text-quaternary py-1 rounded-lg">
       <label className="label cursor-pointer justify-between">
-        <span className="label-text">Name Labels</span>
+        <span className="label-text text-quaternary">Name Labels</span>
         <Switch
           checked={props.showLabels}
           onChange={props.setShowLabels}
