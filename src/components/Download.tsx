@@ -49,6 +49,7 @@ const DownloadButton = ({
       return window.alert('Some Error Occurred');
     }
 
+    /*
     let queryResult: Array<userData> = [];
     const hashedAddress = await getHash();
     const querySnapshot = await getDocs(searchQuery(hashedAddress));
@@ -62,6 +63,7 @@ const DownloadButton = ({
       newUniqueVisitorCount = visitorDoc.data()?.uniqueUsers + 1;
       await updateDoc(visitorsRef, { uniqueUsers: newUniqueVisitorCount });
     }
+    */
 
     if (windowDimensions.width >= 767) {
       downloadURI(dataURLPC, 'QueendomPuzzle.png');
