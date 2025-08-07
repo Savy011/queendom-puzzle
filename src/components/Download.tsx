@@ -1,10 +1,8 @@
 // @ts-nocheck
 import Konva from 'konva';
-import { Lang, userData } from '../type';
+import { Lang} from '../type';
 import { canvasWidth } from './Canvas';
 import useWindowDimensions from '../services/hooks';
-import { getHash, searchQuery, visitorsRef } from '../services/firestore';
-import { getDoc, getDocs, updateDoc } from 'firebase/firestore';
 
 const DownloadButton = ({
   language,
